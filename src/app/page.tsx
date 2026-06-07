@@ -31,13 +31,12 @@ export default function Home() {
   };
 
   const faqs = [
-    { q: "Is this really free?", a: "Yes, the 45-minute strategy session is 100% free with no obligations whatsoever." },
-    { q: "Who is this for?", a: "Service providers and business owners making $5k-$20k/month who want to break the ceiling and scale without sacrificing their life." },
-    { q: "What happens during the call?", a: "We analyze your business, identify bottlenecks, and give you a custom step-by-step roadmap to acquire high-paying clients predictably." },
-    { q: "How long is the consultation?", a: "The strategy session lasts exactly 45 minutes." },
-    { q: "Do I need a website?", a: "Not necessarily, but it helps. We will discuss exactly what assets you need to succeed during our call." },
-    { q: "What happens after submitting the form?", a: "You will receive an email with a private link to my Calendly to pick a time that works for you." },
-    { q: "Is this a sales call?", a: "The primary goal is to give you a roadmap. If we feel you're a good fit for our paid programs, we may mention them at the end, but there is absolutely zero pressure." }
+    { q: "Is this really free?", a: "Yes. The consultation is completely complimentary with no hidden fees or obligations." },
+    { q: "Who is this for?", a: "Service providers and business owners who want to predictably scale their revenue." },
+    { q: "What happens during the call?", a: "We analyze your current operations, identify bottlenecks, and map out a custom growth strategy." },
+    { q: "How long is the consultation?", a: "The session is kept strictly to 45 minutes to respect your time." },
+    { q: "What happens after submitting the form?", a: "You will receive an email with a secure link to my Calendly to reserve your preferred time." },
+    { q: "Is this a sales pitch?", a: "No. The primary goal is to provide immediate value and a clear roadmap. If there is a mutual fit for deeper work, we can discuss it, but there is zero pressure." }
   ];
 
   return (
@@ -86,48 +85,39 @@ export default function Home() {
           />
         </header>
         <div className="container text-center flex flex-col items-center justify-center animate-fade-in delay-200" style={{ flex: 1, paddingBottom: '6rem' }}>
-          <div className="mb-8 inline-block px-5 py-2 rounded-full border" style={{ borderColor: 'var(--surface-border)', background: 'var(--surface)' }}>
-            <span style={{ color: '#ffffff', fontWeight: 500, letterSpacing: '0.1em', fontSize: '0.75rem', textTransform: 'uppercase', opacity: 0.7 }}>Exclusive Invitation</span>
-          </div>
           <h1 className="text-gradient mb-6" style={{ textTransform: 'none', letterSpacing: '-0.02em', lineHeight: 1.05 }}>Engineer Your<br/>Business Growth</h1>
-          <p style={{ maxWidth: '650px', margin: '0 auto 3rem', fontSize: '1.25rem', color: '#999999', fontWeight: 300 }}>
+          <p style={{ maxWidth: '650px', margin: '0 auto 3rem', fontSize: '1.25rem', color: '#B3B3B3', fontWeight: 300 }}>
             Discover the exact roadmap to scale your service business predictably.
             Claim your free 45-minute strategy session today.
           </p>
-          <button onClick={scrollToForm} className="btn btn-primary">
-            Apply For Your Strategy Session
+          <button onClick={scrollToForm} className="btn btn-primary mb-4">
+            Reserve My Strategy Call
           </button>
+          <p className="text-muted" style={{ fontSize: '0.875rem', marginTop: '1rem', letterSpacing: '0.02em' }}>
+            Only 5 spots available this week
+          </p>
         </div>
       </section>
 
-      {/* 2. AFTER THE CALL YOU'LL HAVE */}
-      <section className="section" style={{ background: 'rgba(255,255,255,0.01)' }}>
+      {/* 2. WHAT YOU'LL WALK AWAY WITH */}
+      <section className="section" style={{ background: 'var(--surface)' }}>
         <div className="container text-center">
-          <h2 className="mb-16 reveal-on-scroll">After The Call You'll Have</h2>
+          <h2 className="mb-16 reveal-on-scroll">What You'll Walk Away With</h2>
           <div className="grid md:grid-cols-2 gap-8" style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div className="card reveal-on-scroll" style={{ textAlign: 'left', padding: '3rem' }}>
-              <div style={{ width: '6px', height: '6px', background: '#fff', borderRadius: '50%', marginBottom: '2rem', opacity: 0.5 }}></div>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 500 }}>Marketing Diagnosis</h3>
-              <p style={{ margin: 0, fontSize: '1rem', color: '#888', fontWeight: 300 }}>A complete breakdown of what's currently holding your revenue back.</p>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 500 }}>Clear marketing direction</h3>
             </div>
             <div className="card reveal-on-scroll" style={{ textAlign: 'left', padding: '3rem', transitionDelay: '100ms' }}>
-              <div style={{ width: '6px', height: '6px', background: '#fff', borderRadius: '50%', marginBottom: '2rem', opacity: 0.5 }}></div>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 500 }}>Custom Growth Plan</h3>
-              <p style={{ margin: 0, fontSize: '1rem', color: '#888', fontWeight: 300 }}>A personalized strategy tailored to your exact service and market.</p>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 500 }}>Lead generation opportunities</h3>
             </div>
             <div className="card reveal-on-scroll" style={{ textAlign: 'left', padding: '3rem' }}>
-              <div style={{ width: '6px', height: '6px', background: '#fff', borderRadius: '50%', marginBottom: '2rem', opacity: 0.5 }}></div>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 500 }}>Clear Next Steps</h3>
-              <p style={{ margin: 0, fontSize: '1rem', color: '#888', fontWeight: 300 }}>Actionable tasks you can implement immediately to see results.</p>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 500 }}>Action plan</h3>
             </div>
             <div className="card reveal-on-scroll" style={{ textAlign: 'left', padding: '3rem', transitionDelay: '100ms' }}>
-              <div style={{ width: '6px', height: '6px', background: '#fff', borderRadius: '50%', marginBottom: '2rem', opacity: 0.5 }}></div>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 500 }}>Budget Recommendations</h3>
-              <p style={{ margin: 0, fontSize: '1rem', color: '#888', fontWeight: 300 }}>How to allocate your resources for maximum ROI.</p>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 500 }}>Budget clarity</h3>
             </div>
-            <div className="card reveal-on-scroll md:col-span-2" style={{ textAlign: 'center', padding: '4rem 2rem', background: 'rgba(255,255,255,0.02)' }}>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', fontWeight: 500 }}>Practical Roadmap</h3>
-              <p style={{ margin: 0, fontSize: '1.125rem', color: '#888', fontWeight: 300, maxWidth: '600px', marginInline: 'auto' }}>A step-by-step framework to transition from unpredictable referrals to a scalable acquisition machine.</p>
+            <div className="card reveal-on-scroll md:col-span-2" style={{ textAlign: 'center', padding: '3rem' }}>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 500 }}>Immediate next steps</h3>
             </div>
           </div>
         </div>
@@ -139,42 +129,68 @@ export default function Home() {
           <h2 className="mb-16 reveal-on-scroll">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-8" style={{ maxWidth: '1000px', margin: '0 auto' }}>
             <div className="card reveal-on-scroll" style={{ padding: '4rem 2rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', opacity: 0.4, marginBottom: '1.5rem' }}>STEP 1</div>
-              <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 500 }}>Fill out the form</h3>
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', opacity: 0.4, marginBottom: '1.5rem', color: '#B3B3B3' }}>STEP 1</div>
+              <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 500 }}>Apply</h3>
             </div>
             <div className="card reveal-on-scroll" style={{ padding: '4rem 2rem', transitionDelay: '100ms' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', opacity: 0.4, marginBottom: '1.5rem' }}>STEP 2</div>
-              <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 500 }}>Choose a time</h3>
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', opacity: 0.4, marginBottom: '1.5rem', color: '#B3B3B3' }}>STEP 2</div>
+              <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 500 }}>Book</h3>
             </div>
             <div className="card reveal-on-scroll" style={{ padding: '4rem 2rem', transitionDelay: '200ms' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', opacity: 0.4, marginBottom: '1.5rem' }}>STEP 3</div>
-              <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 500 }}>Get your strategy call</h3>
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', opacity: 0.4, marginBottom: '1.5rem', color: '#B3B3B3' }}>STEP 3</div>
+              <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 500 }}>Grow</h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. LIMITED AVAILABILITY */}
-      <section className="section reveal-on-scroll" style={{ background: 'rgba(255,255,255,0.01)', borderTop: '1px solid rgba(255,255,255,0.03)', borderBottom: '1px solid rgba(255,255,255,0.03)', padding: '8rem 0' }}>
+      {/* 4. SERVICES SECTION */}
+      <section className="section" style={{ background: 'var(--surface)' }}>
         <div className="container text-center">
-          <h2 className="mb-8" style={{ fontSize: '2.5rem', fontWeight: 400, letterSpacing: '-0.02em', color: '#e0e0e0' }}>Only a few consultation spots are available each week.</h2>
-          <div className="inline-block px-8 py-4 rounded-md" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <span style={{ fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', fontSize: '0.875rem', color: '#ffffff' }}>
-              5 Strategy Call Slots Available
-            </span>
+          <h2 className="mb-16 reveal-on-scroll">Growth Systems I Build</h2>
+          <div className="grid md:grid-cols-2 gap-6" style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <div className="card reveal-on-scroll" style={{ padding: '2rem' }}>
+              <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 400, color: '#FFFFFF' }}>High-converting websites</h3>
+            </div>
+            <div className="card reveal-on-scroll" style={{ padding: '2rem', transitionDelay: '50ms' }}>
+              <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 400, color: '#FFFFFF' }}>Landing pages that generate leads</h3>
+            </div>
+            <div className="card reveal-on-scroll" style={{ padding: '2rem', transitionDelay: '100ms' }}>
+              <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 400, color: '#FFFFFF' }}>SEO optimization for organic growth</h3>
+            </div>
+            <div className="card reveal-on-scroll" style={{ padding: '2rem', transitionDelay: '150ms' }}>
+              <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 400, color: '#FFFFFF' }}>Email marketing systems</h3>
+            </div>
+            <div className="card reveal-on-scroll" style={{ padding: '2rem', transitionDelay: '200ms' }}>
+              <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 400, color: '#FFFFFF' }}>Meta Ads (Facebook + Instagram)</h3>
+            </div>
+            <div className="card reveal-on-scroll" style={{ padding: '2rem', transitionDelay: '250ms' }}>
+              <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 400, color: '#FFFFFF' }}>Full digital growth strategy</h3>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 5. FAQ */}
-      <section className="section">
+      {/* 5. LIMITED AVAILABILITY */}
+      <section className="section reveal-on-scroll" style={{ borderTop: '1px solid var(--surface-border)', borderBottom: '1px solid var(--surface-border)', padding: '8rem 0' }}>
+        <div className="container text-center">
+          <div style={{ fontSize: '4rem', fontWeight: 300, lineHeight: 1, marginBottom: '1rem', color: '#FFFFFF' }}>5</div>
+          <h2 className="mb-6" style={{ fontSize: '1.5rem', fontWeight: 500, letterSpacing: '0.1em', color: '#FFFFFF', textTransform: 'uppercase' }}>Spots Available This Week</h2>
+          <p className="text-muted" style={{ fontSize: '1.125rem', fontWeight: 300, maxWidth: '600px', margin: '0 auto' }}>
+            Every consultation is kept personal and practical.
+          </p>
+        </div>
+      </section>
+
+      {/* 6. FAQ */}
+      <section className="section" style={{ background: 'var(--surface)' }}>
         <div className="container">
           <h2 className="text-center mb-16 reveal-on-scroll">FAQ</h2>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             {faqs.map((faq, idx) => (
               <div key={idx} className="card reveal-on-scroll" style={{ padding: '2rem', cursor: 'pointer', marginBottom: '1rem', transitionDelay: `${idx * 50}ms` }} onClick={() => toggleFaq(idx)}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <h4 style={{ fontSize: '1.125rem', margin: 0, fontWeight: 400, color: openFaq === idx ? '#fff' : '#ccc', transition: 'color 0.3s ease' }}>{faq.q}</h4>
+                  <h4 style={{ fontSize: '1.125rem', margin: 0, fontWeight: 400, color: openFaq === idx ? '#FFFFFF' : '#B3B3B3', transition: 'color 0.3s ease' }}>{faq.q}</h4>
                   <div style={{ fontSize: '1.5rem', fontWeight: 300, transform: openFaq === idx ? 'rotate(45deg)' : 'none', transition: 'transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)', opacity: 0.5 }}>+</div>
                 </div>
                 <div style={{ 
@@ -183,7 +199,7 @@ export default function Home() {
                   transition: 'max-height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)',
                   opacity: openFaq === idx ? 1 : 0,
                 }}>
-                  <p style={{ margin: '1.5rem 0 0 0', fontSize: '1rem', color: '#888', fontWeight: 300 }}>{faq.a}</p>
+                  <p style={{ margin: '1.5rem 0 0 0', fontSize: '1rem', color: '#7A7A7A', fontWeight: 300 }}>{faq.a}</p>
                 </div>
               </div>
             ))}
@@ -191,16 +207,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. FLODESK FORM SECTION */}
+      {/* 7. FLODESK FORM SECTION */}
       <section id="optin-form" className="section hero-bg" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
         <div className="container text-center reveal-on-scroll">
           <h2 className="text-gradient mb-6" style={{ fontSize: '3.5rem' }}>Ready to scale?</h2>
-          <p style={{ maxWidth: '600px', margin: '0 auto 4rem', color: '#888', fontSize: '1.125rem', fontWeight: 300 }}>
+          <p style={{ maxWidth: '600px', margin: '0 auto 4rem', color: '#B3B3B3', fontSize: '1.125rem', fontWeight: 300 }}>
             Fill out the application below to secure your strategy session.
           </p>
           
-          <div className="card" style={{ maxWidth: '550px', margin: '0 auto', padding: '4rem 2rem', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 30px 60px rgba(0,0,0,0.8)' }}>
-            <h3 className="mb-8" style={{ fontSize: '1.125rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 500, color: '#e0e0e0' }}>Apply Now</h3>
+          <div className="card" style={{ maxWidth: '550px', margin: '0 auto', padding: '4rem 2rem', background: '#0A0A0A', border: '1px solid var(--surface-border)', boxShadow: 'var(--shadow-glow)' }}>
+            <h3 className="mb-8" style={{ fontSize: '1.125rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 500, color: '#FFFFFF' }}>Apply Now</h3>
             
             {/* Real Flodesk Form */}
             <NewsletterForm />
