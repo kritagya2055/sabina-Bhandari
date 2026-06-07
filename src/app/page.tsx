@@ -1,98 +1,78 @@
 export default function Home() {
   return (
-    <main className="bg-[#061626] text-white">
+    <main style={{ fontFamily: 'system-ui', background: '#061626', color: 'white' }}>
+
+      {/* TOP SECTION */}
+      <header style={{ padding: '20px 0', textAlign: 'center' }}>
+        <img src="/logo.png" alt="Logo" style={{ width: 100 }} />
+      </header>
 
       {/* HERO */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
-        
-        {/* Logo placeholder */}
-        <img
-          src="/logo.png"
-          alt="Logo"
-          className="w-28 mb-10 opacity-90"
-        />
-
-        <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          Struggling to get more customers online?
+      <section style={{ textAlign: 'center', padding: '80px 20px' }}>
+        <h1 style={{ fontSize: '42px', marginBottom: '20px' }}>
+          Get More Customers Online
         </h1>
 
-        <p className="mt-5 text-lg text-gray-300 max-w-2xl">
-          Book a FREE 1:1 digital marketing consultation and get a clear plan to grow your business with simple strategies.
+        <p style={{ fontSize: '18px', opacity: 0.8, maxWidth: 600, margin: '0 auto' }}>
+          Book a free 1:1 consultation and get a simple marketing plan to grow your business.
         </p>
 
         <a
           href="#form"
-          className="mt-8 bg-cyan-500 hover:bg-cyan-400 text-black font-medium px-6 py-3 rounded-full transition"
+          style={{
+            display: 'inline-block',
+            marginTop: 30,
+            padding: '12px 24px',
+            background: '#00D4FF',
+            color: '#000',
+            borderRadius: 30,
+            textDecoration: 'none',
+            fontWeight: 'bold'
+          }}
         >
-          Book your FREE call now
+          Book Free Call
         </a>
-
-        <p className="mt-4 text-sm text-gray-400">
-          No payment required • 100% free consultation
-        </p>
       </section>
 
       {/* PROBLEM */}
-      <section className="py-20 px-6 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold text-center mb-10">
-          Why most businesses struggle online
-        </h2>
-
-        <ul className="space-y-4 text-gray-300">
-          <li>• Posting on Facebook/Instagram but not getting customers</li>
-          <li>• Boosting ads but no real sales</li>
-          <li>• Confused about marketing strategy</li>
-          <li>• Getting random low-quality leads</li>
-          <li>• No consistent system for customers</li>
+      <section style={{ padding: '60px 20px', maxWidth: 800, margin: '0 auto' }}>
+        <h2>Why businesses struggle online</h2>
+        <ul style={{ opacity: 0.8, lineHeight: 1.8 }}>
+          <li>No customers from social media</li>
+          <li>Ads not giving sales</li>
+          <li>Confused marketing strategy</li>
+          <li>Low quality leads</li>
         </ul>
       </section>
 
       {/* SOLUTION */}
-      <section className="py-20 px-6 bg-[#0a1f33]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-6">
-            What you will get in this free call
-          </h2>
-
-          <p className="text-gray-300">
-            We will analyze your business, identify what is not working, and give you a simple step-by-step marketing plan you can start using immediately.
+      <section style={{ padding: '60px 20px', background: '#0a1f33' }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          <h2>What you get</h2>
+          <p>
+            We analyze your business and give you a simple step-by-step plan to get more customers.
           </p>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="py-20 px-6 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold text-center mb-10">
-          How it works
-        </h2>
-
-        <div className="space-y-4 text-gray-300">
-          <p>1. Fill the form below</p>
-          <p>2. Receive email with booking link</p>
-          <p>3. Select your time</p>
-          <p>4. Join 1:1 consultation call</p>
-          <p>5. Get your free marketing plan</p>
-        </div>
+      {/* STEPS */}
+      <section style={{ padding: '60px 20px', maxWidth: 800, margin: '0 auto' }}>
+        <h2>How it works</h2>
+        <ol style={{ lineHeight: 2 }}>
+          <li>Fill the form</li>
+          <li>Get booking link by email</li>
+          <li>Select time</li>
+          <li>Join call</li>
+        </ol>
       </section>
 
-      {/* FORM WRAPPER */}
-      <section id="form" className="py-20 px-6 bg-[#061626]">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-6">
-            Book your FREE consultation
-          </h2>
+      {/* FORM PLACEHOLDER (DO NOT BREAK FLODESK) */}
+      <section id="form" style={{ padding: '80px 20px', textAlign: 'center' }}>
+        <h2>Book your free consultation</h2>
 
-          <p className="text-gray-400 mb-10">
-            Fill out the form below and we will contact you with next steps.
-          </p>
-
-          {/* FLODESK FORM PLACEHOLDER - DO NOT MODIFY LOGIC */}
-          <div className="bg-[#0a1f33] p-6 rounded-xl border border-gray-700">
-            {/* Flodesk embed stays here unchanged */}
-            <p className="text-gray-500">
-              [Flodesk Form Embed Here]
-            </p>
-          </div>
+        <div style={{ marginTop: 20 }}>
+          {/* KEEP FLODESK HERE */}
+          <div>[Flodesk Form Here - DO NOT CHANGE]</div>
         </div>
       </section>
 
