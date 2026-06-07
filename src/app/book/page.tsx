@@ -36,12 +36,13 @@ export default function BookPage() {
       </div>
 
       <div className="container flex-1" style={{ position: 'relative' }}>
-        <div 
-          className="calendly-inline-widget" 
-          data-url={process.env.NEXT_PUBLIC_CALENDLY_URL} 
-          style={{ minWidth: '320px', height: '700px', width: '100%' }}
+        <iframe 
+          src={process.env.NEXT_PUBLIC_CALENDLY_URL} 
+          width="100%" 
+          height="700px" 
+          frameBorder="0" 
+          style={{ border: 'none', backgroundColor: 'transparent', borderRadius: 'var(--radius-lg)' }}
         />
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
     </main>
   );
