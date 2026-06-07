@@ -7,17 +7,9 @@ export default function BookPage() {
   const router = useRouter();
 
   useEffect(() => {
-    // Listen for Calendly booking events
-    function isCalendlyEvent(e: MessageEvent) {
-      return e.data.event && e.data.event.indexOf('calendly') === 0;
-    }
-
     const handleMessage = (e: MessageEvent) => {
-      if (isCalendlyEvent(e)) {
-        if (e.data.event === 'calendly.event_scheduled') {
-          // Redirect to thank you page after booking
-          router.push('/thank-you');
-        }
+      if (e.data && e.data.event === 'calendly.event_scheduled') {
+        window.location.href = 'https://sabina-bhandari.vercel.app/thank-you';
       }
     };
 
@@ -26,7 +18,11 @@ export default function BookPage() {
     return () => {
       window.removeEventListener('message', handleMessage);
     };
-  }, [router]);
+  }, []);
+
+  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL 
+    ? `${process.env.NEXT_PUBLIC_CALENDLY_URL}${process.env.NEXT_PUBLIC_CALENDLY_URL.includes('?') ? '&' : '?'}embed_domain=sabina-bhandari.vercel.app&embed_type=Inline`
+    : '';
 
   return (
     <main className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -36,13 +32,15 @@ export default function BookPage() {
       </div>
 
       <div className="container flex-1" style={{ position: 'relative' }}>
-        <iframe 
-          src={process.env.NEXT_PUBLIC_CALENDLY_URL} 
-          width="100%" 
-          height="700px" 
-          frameBorder="0" 
-          style={{ border: 'none', backgroundColor: 'transparent', borderRadius: 'var(--radius-lg)' }}
-        />
+        {calendlyUrl && (
+          <iframe 
+            src={calendlyUrl} 
+            width="100%" 
+            height="700px" 
+            frameBorder="0" 
+            style={{ border: 'none', backgroundColor: 'transparent', borderRadius: 'var(--radius-lg)' }}
+          />
+        )}
       </div>
     </main>
   );
