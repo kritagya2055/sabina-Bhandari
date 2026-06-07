@@ -8,9 +8,14 @@ export default function ThankYouPage() {
         </p>
 
         <div className="card" style={{ maxWidth: '800px', margin: '0 auto', padding: '0', overflow: 'hidden' }}>
-          {/* Placeholder for Video Embed */}
-          <div style={{ aspectRatio: '16/9', backgroundColor: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <h3 style={{ color: 'white' }}>Video Placeholder</h3>
+          <div style={{ aspectRatio: '16/9', backgroundColor: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+            <iframe 
+              src={process.env.NEXT_PUBLIC_VIMEO_URL?.replace('vimeo.com/', 'player.vimeo.com/video/')} 
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+              frameBorder="0" 
+              allow="autoplay; fullscreen; picture-in-picture" 
+              allowFullScreen
+            />
           </div>
         </div>
 

@@ -35,21 +35,13 @@ export default function BookPage() {
         <p>Please select a time below to schedule your free strategy session.</p>
       </div>
 
-      <div className="container flex-1">
-        {/* Placeholder for Calendly Embed */}
-        <div style={{ border: '2px dashed var(--border)', borderRadius: 'var(--radius-lg)', padding: '4rem 2rem', textAlign: 'center', backgroundColor: 'var(--surface)', height: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-          <h3 style={{ color: 'var(--primary)' }}>Calendly Widget Placeholder</h3>
-          <p>The actual Calendly widget will be embedded here.</p>
-          <p className="mt-4" style={{ fontSize: '0.9rem', opacity: 0.7 }}>
-            For demonstration, click the button below to simulate a completed booking.
-          </p>
-          <button 
-            className="btn btn-primary mt-4" 
-            onClick={() => window.postMessage({ event: 'calendly.event_scheduled' }, '*')}
-          >
-            Simulate Booking
-          </button>
-        </div>
+      <div className="container flex-1" style={{ position: 'relative' }}>
+        <div 
+          className="calendly-inline-widget" 
+          data-url={process.env.NEXT_PUBLIC_CALENDLY_URL} 
+          style={{ minWidth: '320px', height: '700px', width: '100%' }}
+        />
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
     </main>
   );
