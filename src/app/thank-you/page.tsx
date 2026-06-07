@@ -2,7 +2,7 @@ export default function ThankYouPage() {
   return (
     <main className="section text-center" style={{ minHeight: '100vh' }}>
       <div className="container">
-        <h1 className="text-gradient mb-4">You're All Set!</h1>
+        <h1 className="text-gradient mb-4">You&apos;re All Set!</h1>
         <p className="mb-8" style={{ fontSize: '1.25rem' }}>
           Your strategy session has been confirmed. Please watch the video below before our call.
         </p>
@@ -28,7 +28,7 @@ export default function ThankYouPage() {
             <li style={{ marginBottom: '0.5rem', borderLeft: '2px solid #2A2A2A', paddingLeft: '1rem' }}>Show up 2 minutes early</li>
           </ul>
           <p className="mt-8 mb-0 font-medium">
-            I'm looking forward to helping you build your acquisition system!
+            I&apos;m looking forward to helping you build your acquisition system!
           </p>
         </div>
       </div>

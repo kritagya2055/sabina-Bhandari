@@ -102,7 +102,7 @@ export default function Home() {
       {/* 2. WHAT YOU'LL WALK AWAY WITH */}
       <section className="section" style={{ background: 'var(--surface)' }}>
         <div className="container text-center">
-          <h2 className="mb-16 reveal-on-scroll">What You'll Walk Away With</h2>
+          <h2 className="mb-16 reveal-on-scroll">What You&apos;ll Walk Away With</h2>
           <div className="grid md:grid-cols-2 gap-8" style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div className="card reveal-on-scroll" style={{ textAlign: 'left', padding: '3rem' }}>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 500 }}>Clear marketing direction</h3>
