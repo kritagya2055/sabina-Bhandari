@@ -21,11 +21,11 @@ export default function ThankYouPage() {
 
         <div className="card mt-8" style={{ maxWidth: '800px', margin: '2rem auto 0', textAlign: 'left' }}>
           <h3 className="mb-4">How to prepare for our call:</h3>
-          <ul style={{ listStylePosition: 'inside', lineHeight: '2' }}>
-            <li>📍 Find a quiet room with a good internet connection</li>
-            <li>💻 Join from a laptop or desktop computer (no phones please)</li>
-            <li>📝 Have your current revenue numbers ready</li>
-            <li>⏱️ Show up 2 minutes early</li>
+          <ul style={{ listStylePosition: 'inside', lineHeight: '2', color: '#B3B3B3', listStyleType: 'none', padding: 0 }}>
+            <li style={{ marginBottom: '0.5rem', borderLeft: '2px solid #2A2A2A', paddingLeft: '1rem' }}>Find a quiet room with a good internet connection</li>
+            <li style={{ marginBottom: '0.5rem', borderLeft: '2px solid #2A2A2A', paddingLeft: '1rem' }}>Join from a laptop or desktop computer (no phones please)</li>
+            <li style={{ marginBottom: '0.5rem', borderLeft: '2px solid #2A2A2A', paddingLeft: '1rem' }}>Have your current revenue numbers ready</li>
+            <li style={{ marginBottom: '0.5rem', borderLeft: '2px solid #2A2A2A', paddingLeft: '1rem' }}>Show up 2 minutes early</li>
           </ul>
           <p className="mt-8 mb-0 font-medium">
             I'm looking forward to helping you build your acquisition system!

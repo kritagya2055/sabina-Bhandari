@@ -27,8 +27,8 @@ export default function BookPage() {
   return (
     <main className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <div className="container text-center mb-8">
-        <h1 className="text-gradient mb-4">Your Application Has Been Received</h1>
-        <p>Please select a time below to schedule your free strategy session.</p>
+        <h1 className="text-gradient mb-4" style={{ letterSpacing: '-0.02em', fontWeight: 600 }}>Your Application Has Been Received</h1>
+        <p style={{ color: '#B3B3B3', fontSize: '1.25rem', fontWeight: 300 }}>Please select a time below to schedule your free strategy session.</p>
       </div>
 
       <div className="container flex-1" style={{ position: 'relative' }}>
