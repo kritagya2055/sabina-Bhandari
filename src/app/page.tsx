@@ -1,38 +1,55 @@
 'use client';
 
+import { useState } from 'react';
 import NewsletterForm from '../components/NewsletterForm';
 
 export default function Home() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   const scrollToForm = () => {
     document.getElementById('optin-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const faqs = [
+    { q: "Is this really free?", a: "Yes, the 45-minute strategy session is 100% free with no obligations whatsoever." },
+    { q: "Who is this for?", a: "Service providers and business owners making $5k-$20k/month who want to break the ceiling and scale without sacrificing their life." },
+    { q: "What happens during the call?", a: "We analyze your business, identify bottlenecks, and give you a custom step-by-step roadmap to acquire high-paying clients predictably." },
+    { q: "How long is the consultation?", a: "The strategy session lasts exactly 45 minutes." },
+    { q: "Do I need a website?", a: "Not necessarily, but it helps. We will discuss exactly what assets you need to succeed during our call." },
+    { q: "What happens after submitting the form?", a: "You will receive an email with a private link to my Calendly to pick a time that works for you." },
+    { q: "Is this a sales call?", a: "The primary goal is to give you a roadmap. If we feel you're a good fit for our paid programs, we may mention them at the end, but there is absolutely zero pressure." }
+  ];
+
   return (
     <main className="overflow-hidden">
-      {/* 1. Hero Section */}
-      <section className="section hero-bg" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      {/* 1. HERO SECTION */}
+      <section className="section hero-bg" style={{ minHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
         {/* Top Navigation & Logo Header */}
-        <header className="pt-3 md:pt-5 pb-4" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <header className="pt-3 md:pt-4 pb-4" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           
           {/* Social Nav Bar */}
-          <nav style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', padding: '0 2rem', marginBottom: '2rem' }}>
+          <nav style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', padding: '0 2rem', marginBottom: '1.5rem' }}>
             <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
               <a href="https://www.instagram.com/bhandari_kritagya?igsh=MTV3OHBicG5kOXBjbQ==" target="_blank" rel="noopener noreferrer" 
-                 style={{ color: 'var(--primary)', opacity: 0.7, transition: 'all 0.3s ease', display: 'flex' }} 
+                 style={{ color: '#ffffff', opacity: 0.7, transition: 'all 0.3s ease', display: 'flex' }} 
                  onMouseOver={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateY(-2px)'; }} 
                  onMouseOut={e => { e.currentTarget.style.opacity = '0.7'; e.currentTarget.style.transform = 'translateY(0)'; }} 
                  aria-label="Instagram">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
               </a>
               <a href="https://www.facebook.com/share/17RdTg4U4R/" target="_blank" rel="noopener noreferrer" 
-                 style={{ color: 'var(--primary)', opacity: 0.7, transition: 'all 0.3s ease', display: 'flex' }} 
+                 style={{ color: '#ffffff', opacity: 0.7, transition: 'all 0.3s ease', display: 'flex' }} 
                  onMouseOver={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateY(-2px)'; }} 
                  onMouseOut={e => { e.currentTarget.style.opacity = '0.7'; e.currentTarget.style.transform = 'translateY(0)'; }} 
                  aria-label="Facebook">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
               </a>
               <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer" 
-                 style={{ color: 'var(--primary)', opacity: 0.7, transition: 'all 0.3s ease', display: 'flex' }} 
+                 style={{ color: '#ffffff', opacity: 0.7, transition: 'all 0.3s ease', display: 'flex' }} 
                  onMouseOver={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateY(-2px)'; }} 
                  onMouseOut={e => { e.currentTarget.style.opacity = '0.7'; e.currentTarget.style.transform = 'translateY(0)'; }} 
                  aria-label="WhatsApp">
@@ -54,197 +71,121 @@ export default function Home() {
           />
         </header>
         <div className="container text-center flex flex-col items-center justify-center animate-fade-in" style={{ flex: 1, paddingBottom: '6rem' }}>
-          <div className="mb-4 inline-block px-4 py-1.5 rounded-full border" style={{ borderColor: 'var(--surface-border)', background: 'var(--surface)' }}>
-            <span style={{ color: 'var(--primary)', fontWeight: 600, letterSpacing: '0.05em', fontSize: '0.875rem', textTransform: 'uppercase' }}>Exclusive Invitation</span>
+          <div className="mb-6 inline-block px-5 py-2 rounded-full border" style={{ borderColor: 'var(--surface-border)', background: 'var(--surface)' }}>
+            <span style={{ color: '#ffffff', fontWeight: 500, letterSpacing: '0.08em', fontSize: '0.75rem', textTransform: 'uppercase', opacity: 0.8 }}>Exclusive Invitation</span>
           </div>
-          <h1 className="text-gradient">Free Business Growth <br/>Strategy Session</h1>
-          <p style={{ maxWidth: '700px', margin: '0 auto 2.5rem', fontSize: '1.25rem' }}>
-            Discover the exact roadmap to scale your service business without burning out.
+          <h1 className="text-gradient mb-6" style={{ textTransform: 'none' }}>Engineer Your<br/>Business Growth</h1>
+          <p style={{ maxWidth: '650px', margin: '0 auto 3rem', fontSize: '1.25rem', color: '#a0a0a0' }}>
+            Discover the exact roadmap to scale your service business predictably.
             Claim your free 45-minute strategy session today.
           </p>
-          <button onClick={scrollToForm} className="btn btn-primary" style={{ fontSize: '1.125rem', padding: '1.25rem 3rem' }}>
+          <button onClick={scrollToForm} className="btn btn-primary">
             Apply For Your Strategy Session
           </button>
         </div>
       </section>
 
-      {/* 2. Problem Section */}
-      <section className="section">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in delay-100">
-              <h2 style={{ fontSize: '2.5rem' }}>Are you tired of the <span style={{ color: 'var(--primary)' }}>revenue rollercoaster?</span></h2>
-              <p>
-                Most service business owners are stuck working IN their business instead of ON it.
-                You have the skills, but the predictable client acquisition system is missing.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, marginTop: '2rem' }}>
-                <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                  <span style={{ color: 'var(--primary)' }}>✦</span> Relying too much on unpredictable referrals
-                </li>
-                <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                  <span style={{ color: 'var(--primary)' }}>✦</span> Income wildly fluctuating month to month
-                </li>
-                <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                  <span style={{ color: 'var(--primary)' }}>✦</span> Working 60+ hour weeks and burning out
-                </li>
-              </ul>
-            </div>
-            <div className="card text-center animate-fade-in delay-200" style={{ padding: '5rem 3rem', background: 'linear-gradient(180deg, rgba(203,168,100,0.05) 0%, rgba(255,255,255,0.02) 100%)' }}>
-              <h3 style={{ color: 'var(--primary)', fontSize: '2.5rem', marginBottom: '1rem' }}>It doesn't have to</h3>
-              <h3 style={{ fontSize: '2.5rem', opacity: 0.9 }}>be this way.</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. What You'll Get Section */}
+      {/* 2. AFTER THE CALL YOU'LL HAVE */}
       <section className="section" style={{ background: 'rgba(255,255,255,0.01)' }}>
         <div className="container text-center">
-          <h2 className="mb-12">What You'll Get On This Call</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="card animate-fade-in delay-100">
-              <div style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: 'var(--primary)' }}>✧</div>
-              <h3 style={{ color: 'var(--foreground)' }}>Clarity</h3>
-              <p style={{ margin: 0, fontSize: '1rem' }}>A crystal clear vision of exactly what you need to do to hit your revenue goals.</p>
+          <h2 className="mb-12">After The Call You'll Have</h2>
+          <div className="grid md:grid-cols-2 gap-6" style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <div className="card animate-fade-in delay-100" style={{ textAlign: 'left', padding: '2.5rem' }}>
+              <div style={{ width: '8px', height: '8px', background: '#fff', borderRadius: '50%', marginBottom: '1.5rem' }}></div>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>Marketing Diagnosis</h3>
+              <p style={{ margin: 0, fontSize: '0.95rem' }}>A complete breakdown of what's currently holding your revenue back.</p>
             </div>
-            <div className="card animate-fade-in delay-200">
-              <div style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: 'var(--primary)' }}>✦</div>
-              <h3 style={{ color: 'var(--foreground)' }}>Roadmap</h3>
-              <p style={{ margin: 0, fontSize: '1rem' }}>A step-by-step custom roadmap to acquire high-paying clients predictably.</p>
+            <div className="card animate-fade-in delay-200" style={{ textAlign: 'left', padding: '2.5rem' }}>
+              <div style={{ width: '8px', height: '8px', background: '#fff', borderRadius: '50%', marginBottom: '1.5rem' }}></div>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>Custom Growth Plan</h3>
+              <p style={{ margin: 0, fontSize: '0.95rem' }}>A personalized strategy tailored to your exact service and market.</p>
             </div>
-            <div className="card animate-fade-in delay-300">
-              <div style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: 'var(--primary)' }}>⚡</div>
-              <h3 style={{ color: 'var(--foreground)' }}>Confidence</h3>
-              <p style={{ margin: 0, fontSize: '1rem' }}>The exact strategies to scale without working more hours.</p>
+            <div className="card animate-fade-in delay-300" style={{ textAlign: 'left', padding: '2.5rem' }}>
+              <div style={{ width: '8px', height: '8px', background: '#fff', borderRadius: '50%', marginBottom: '1.5rem' }}></div>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>Clear Next Steps</h3>
+              <p style={{ margin: 0, fontSize: '0.95rem' }}>Actionable tasks you can implement immediately to see results.</p>
+            </div>
+            <div className="card animate-fade-in delay-100" style={{ textAlign: 'left', padding: '2.5rem' }}>
+              <div style={{ width: '8px', height: '8px', background: '#fff', borderRadius: '50%', marginBottom: '1.5rem' }}></div>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>Budget Recommendations</h3>
+              <p style={{ margin: 0, fontSize: '0.95rem' }}>How to allocate your resources for maximum ROI.</p>
+            </div>
+            <div className="card animate-fade-in delay-200 md:col-span-2" style={{ textAlign: 'center', padding: '2.5rem', background: 'rgba(255,255,255,0.02)' }}>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>Practical Roadmap</h3>
+              <p style={{ margin: 0, fontSize: '0.95rem', maxWidth: '600px', marginInline: 'auto' }}>A step-by-step framework to transition from unpredictable referrals to a scalable acquisition machine.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. About Kritagya Section */}
+      {/* 3. HOW IT WORKS */}
       <section className="section">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="card animate-fade-in delay-100" style={{ height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(45deg, rgba(203,168,100,0.1), transparent)' }}>
-              <div style={{ opacity: 0.5, fontStyle: 'italic', letterSpacing: '0.1em' }}>[ Kritagya ]</div>
-            </div>
-            <div className="animate-fade-in delay-200">
-              <div style={{ textTransform: 'uppercase', color: 'var(--primary)', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '1rem', fontSize: '0.875rem' }}>About The Consultant</div>
-              <h2 style={{ marginBottom: '2rem' }}>Meet Kritagya</h2>
-              <p>
-                Hi, I'm Kritagya. I help service business owners build predictable acquisition systems.
-                After helping dozens of businesses scale past their goals, I've distilled the exact process into a repeatable framework.
-              </p>
-              <p>
-                My mission is to help you build a business that serves your life, not the other way around. Let's engineer your growth.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Services Section */}
-      <section className="section" style={{ background: 'rgba(255,255,255,0.01)' }}>
         <div className="container text-center">
-          <h2 className="mb-12">How I Can Help You</h2>
-          <div className="grid md:grid-cols-2 gap-8" style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <div className="card animate-fade-in delay-100" style={{ textAlign: 'left' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--primary)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 'bold' }}>1</div>
-              <h3>Growth Consulting</h3>
-              <p style={{ margin: 0 }}>1-on-1 strategic guidance to build your client acquisition machine from the ground up.</p>
-            </div>
-            <div className="card animate-fade-in delay-200" style={{ textAlign: 'left' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--primary)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 'bold' }}>2</div>
-              <h3>Done-For-You Systems</h3>
-              <p style={{ margin: 0 }}>We build and implement the funnels and client acquisition systems completely for you.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Who This Is For Section */}
-      <section className="section hero-bg">
-        <div className="container text-center animate-fade-in">
-          <h2 className="text-gradient mb-4">Who This Is For</h2>
-          <p style={{ maxWidth: '600px', margin: '0 auto 4rem', fontSize: '1.25rem' }}>
-            This strategy session is specifically designed for:
-          </p>
+          <h2 className="mb-12">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-6" style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            <div className="card" style={{ padding: '2rem' }}>
-              <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Service Providers</h4>
-              <p style={{ margin: 0, fontSize: '0.9rem' }}>Making $5k-$20k/month and want to break the ceiling.</p>
+            <div className="card animate-fade-in delay-100" style={{ padding: '3rem 2rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', opacity: 0.5, marginBottom: '1rem' }}>STEP 1</div>
+              <h3 style={{ margin: 0, fontSize: '1.5rem' }}>Fill out the form</h3>
             </div>
-            <div className="card" style={{ padding: '2rem' }}>
-              <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Business Owners</h4>
-              <p style={{ margin: 0, fontSize: '0.9rem' }}>Who are ready to scale without sacrificing their life.</p>
+            <div className="card animate-fade-in delay-200" style={{ padding: '3rem 2rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', opacity: 0.5, marginBottom: '1rem' }}>STEP 2</div>
+              <h3 style={{ margin: 0, fontSize: '1.5rem' }}>Choose a time</h3>
             </div>
-            <div className="card" style={{ padding: '2rem' }}>
-              <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Action Takers</h4>
-              <p style={{ margin: 0, fontSize: '0.9rem' }}>Who want real results and are willing to execute.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Testimonials Section */}
-      <section className="section" style={{ background: 'rgba(255,255,255,0.01)' }}>
-        <div className="container text-center">
-          <h2 className="mb-12">What Others Say</h2>
-          <div className="grid md:grid-cols-2 gap-8" style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            <div className="card animate-fade-in delay-100" style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute', top: '1rem', left: '2rem', fontSize: '4rem', color: 'rgba(203,168,100,0.2)', fontFamily: 'serif', lineHeight: 1 }}>"</div>
-              <p style={{ fontStyle: 'italic', position: 'relative', zIndex: 1, fontSize: '1.1rem' }}>"Kritagya completely transformed our acquisition process. We doubled our revenue in 3 months."</p>
-              <div style={{ marginTop: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--surface-border)' }}></div>
-                <div style={{ textAlign: 'left' }}>
-                  <h4 style={{ margin: 0, fontSize: '1rem' }}>Sarah J.</h4>
-                  <span style={{ fontSize: '0.8rem', opacity: 0.6 }}>Agency Owner</span>
-                </div>
-              </div>
-            </div>
-            <div className="card animate-fade-in delay-200" style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute', top: '1rem', left: '2rem', fontSize: '4rem', color: 'rgba(203,168,100,0.2)', fontFamily: 'serif', lineHeight: 1 }}>"</div>
-              <p style={{ fontStyle: 'italic', position: 'relative', zIndex: 1, fontSize: '1.1rem' }}>"The clarity I got from just one session was worth thousands. Highly recommended."</p>
-              <div style={{ marginTop: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--surface-border)' }}></div>
-                <div style={{ textAlign: 'left' }}>
-                  <h4 style={{ margin: 0, fontSize: '1rem' }}>Michael T.</h4>
-                  <span style={{ fontSize: '0.8rem', opacity: 0.6 }}>Consultant</span>
-                </div>
-              </div>
+            <div className="card animate-fade-in delay-300" style={{ padding: '3rem 2rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', opacity: 0.5, marginBottom: '1rem' }}>STEP 3</div>
+              <h3 style={{ margin: 0, fontSize: '1.5rem' }}>Get your strategy call</h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 8. FAQ Section */}
+      {/* 4. LIMITED AVAILABILITY */}
+      <section className="section" style={{ background: 'rgba(255,255,255,0.01)', borderTop: '1px solid rgba(255,255,255,0.03)', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+        <div className="container text-center animate-fade-in">
+          <h2 className="mb-6" style={{ fontSize: '2rem' }}>Only a few consultation spots are available each week.</h2>
+          <div className="inline-block px-6 py-3 rounded-md" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <span style={{ fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', fontSize: '0.875rem' }}>
+              5 Strategy Call Slots Available
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. FAQ */}
       <section className="section">
         <div className="container">
-          <h2 className="text-center mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-center mb-12">FAQ</h2>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <div className="card mb-4" style={{ padding: '2rem' }}>
-              <h4 style={{ fontSize: '1.25rem' }}>Is this really free?</h4>
-              <p style={{ margin: 0, fontSize: '1rem' }}>Yes, the 45-minute strategy session is 100% free with no obligations whatsoever.</p>
-            </div>
-            <div className="card mb-4" style={{ padding: '2rem' }}>
-              <h4 style={{ fontSize: '1.25rem' }}>Will there be a pitch?</h4>
-              <p style={{ margin: 0, fontSize: '1rem' }}>The primary goal is to give you a roadmap. If we feel you're a good fit for our paid programs, we may mention them at the end, but there is absolutely zero pressure.</p>
-            </div>
+            {faqs.map((faq, idx) => (
+              <div key={idx} className="card mb-4" style={{ padding: '1.5rem 2rem', cursor: 'pointer', transition: 'all 0.2s ease' }} onClick={() => toggleFaq(idx)}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <h4 style={{ fontSize: '1.125rem', margin: 0, fontWeight: 500 }}>{faq.q}</h4>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 300, transform: openFaq === idx ? 'rotate(45deg)' : 'none', transition: 'transform 0.3s ease' }}>+</div>
+                </div>
+                <div style={{ 
+                  maxHeight: openFaq === idx ? '200px' : '0', 
+                  overflow: 'hidden', 
+                  transition: 'max-height 0.3s ease',
+                  opacity: openFaq === idx ? 1 : 0,
+                }}>
+                  <p style={{ margin: '1rem 0 0 0', fontSize: '0.95rem', color: '#a0a0a0' }}>{faq.a}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 9. Final CTA & 10. Flodesk Form */}
+      {/* 6. FLODESK FORM SECTION */}
       <section id="optin-form" className="section hero-bg" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
         <div className="container text-center animate-fade-in">
-          <h2 className="text-gradient mb-4">Ready to scale your business?</h2>
-          <p style={{ maxWidth: '600px', margin: '0 auto 3rem' }}>
-            Spots are extremely limited. Fill out the application below to secure your strategy session.
+          <h2 className="text-gradient mb-4">Ready to scale?</h2>
+          <p style={{ maxWidth: '600px', margin: '0 auto 3rem', color: '#a0a0a0' }}>
+            Fill out the application below to secure your strategy session.
           </p>
           
-          <div className="card" style={{ maxWidth: '550px', margin: '0 auto', padding: '3rem 2rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(203,168,100,0.2)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}>
-            <h3 className="mb-6" style={{ fontSize: '1.5rem', color: 'var(--primary)' }}>Apply For Your Strategy Session</h3>
+          <div className="card" style={{ maxWidth: '550px', margin: '0 auto', padding: '3rem 2rem', background: '#111', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
+            <h3 className="mb-6" style={{ fontSize: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Apply Now</h3>
             
             {/* Real Flodesk Form */}
             <NewsletterForm />
