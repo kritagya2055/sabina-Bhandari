@@ -12,7 +12,7 @@ export default function Home() {
       {/* 1. Hero Section */}
       <section className="section hero-bg" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         {/* Top Navigation & Logo Header */}
-        <header style={{ width: '100%', padding: '1.5rem 0 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <header className="pt-3 md:pt-5 pb-4" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           
           {/* Social Nav Bar */}
           <nav style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', padding: '0 2rem', marginBottom: '2rem' }}>
