@@ -10,8 +10,22 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       {/* 1. Hero Section */}
-      <section className="section hero-bg" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
-        <div className="container text-center flex flex-col items-center justify-center animate-fade-in">
+      <section className="section hero-bg" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        {/* Top Logo Header */}
+        <header style={{ width: '100%', padding: '4rem 0 2rem', display: 'flex', justifyContent: 'center' }}>
+          <img 
+            src="/logo.png" 
+            alt="Brand Logo" 
+            className="animate-fade-in"
+            style={{ 
+              height: '36px', 
+              width: 'auto', 
+              objectFit: 'contain',
+              opacity: 0.95
+            }} 
+          />
+        </header>
+        <div className="container text-center flex flex-col items-center justify-center animate-fade-in" style={{ flex: 1, paddingBottom: '6rem' }}>
           <div className="mb-4 inline-block px-4 py-1.5 rounded-full border" style={{ borderColor: 'var(--surface-border)', background: 'var(--surface)' }}>
             <span style={{ color: 'var(--primary)', fontWeight: 600, letterSpacing: '0.05em', fontSize: '0.875rem', textTransform: 'uppercase' }}>Exclusive Invitation</span>
           </div>
